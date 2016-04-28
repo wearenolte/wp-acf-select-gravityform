@@ -1,0 +1,40 @@
+{
+  "name": "moxie-lean/acf-gravity-forms-select",
+  "description": "Component for ACF to allow selection the ID of the gravity forms",
+  "keywords": [ "acf", "wordpress", "gravity forms"],
+  "homepage": "https://github.com/moxienyc/skaled.com-back-end/issues",
+  "type": "wordpress-plugin",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Crisoforo Gaspar",
+      "email": "developer@getmoxied.net"
+    }
+  ],
+"require": {
+    "php": ">=5.4",
+    "composer/installers": "^1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Lean\\Acf\\Types\\Gravity\\": "src/"
+    }
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "2.*",
+    "wp-coding-standards/wpcs": "0.9.0"
+  },
+  "scripts": {
+    "installSniffer": [
+      "./vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs/",
+      "./vendor/bin/phpcs --config-set default_standard ./codesniffer.ruleset.xml",
+      "./vendor/bin/phpcs --config-set show_progress 0",
+      "./vendor/bin/phpcs --config-set colors 1"
+    ],
+    "post-install-cmd": [ "@installSniffer" ],
+    "post-update-cmd": [ "@installSniffer" ],
+    "ci": [
+      "phpcs src/*.php *.php"
+    ]
+  }
+}
