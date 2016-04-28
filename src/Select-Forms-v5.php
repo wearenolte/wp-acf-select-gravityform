@@ -5,20 +5,18 @@
  */
 class Acf_Field_Select_Form extends \acf_field {
 
-	/*
+	/**
 	 *  This function will setup the field type data
 	 */
 	function __construct( $settings ) {
-		/*
-		 *  name (string) Single word, no spaces. Underscores allowed
+		/**
+		 *  Single word, no spaces. Underscores allowed
 		 */
 		$this->name = 'SELECT_GRAVITY_FORMS';
 		$this->label = 'Gravity Forms';
 		$this->category = 'choice';
 		$this->defaults = [];
-		$this->l10n = [
-			'error'	=> 'Select a valid option',
-		];
+		$this->l10n = [ 'error' => 'Select a valid option' ];
 		$this->settings = $settings;
 
 		parent::__construct();
