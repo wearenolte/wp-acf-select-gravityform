@@ -7,12 +7,12 @@ class Select_Field {
 
 	public static function render( $field ) {
 		if ( ! class_exists( '\GFAPI' ) ) {
-			self::error( 'Make sure you instellaed and activated Gravity Forms' );
+			self::error( 'Make sure you installed and activated Gravity Forms' );
 			return;
 		}
 		$forms = \GFAPI::get_forms();
 		if ( empty( $forms ) ) {
-			self::error( 'You don\'t have any available form.' );
+			self::error( 'You don\'t have any available forms.' );
 			return;
 		}
 		self::select( $forms, $field );
