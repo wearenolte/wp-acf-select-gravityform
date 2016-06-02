@@ -12,7 +12,20 @@ Author URI: http://getmoxied.net/
 $url = plugin_dir_url( __FILE__ );
 $path = plugin_dir_path( __FILE__ );
 $autoload = $path . 'vendor/autoload.php';
-if ( file_exists( $autoload ) ) {
-	require_once $path . 'vendor/autoload.php';
+
+if ( file_exists(  ) ) {
+	require_once $autoload;
 }
-new Select( $url, $path );
+
+if ( class_exists( __NAMESPACE__ . '\\Select' ) ) {
+	new Select( $url, $path );
+} else {
+	add_action( 'admin_notices', function(){
+	?>
+	<div class="update-nag notice is-dismissible">
+		<p>Make sure you are including the <code>vendor/autoload.php</code> file for the <strong>ACF Gravity Form Select component.</strong></p>
+	</div>
+	<?php
+		deactivate_plugins( plugin_basename( __FILE__ )  );
+	});
+}
