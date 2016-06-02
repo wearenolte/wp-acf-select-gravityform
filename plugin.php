@@ -1,6 +1,4 @@
-<?php
-use Lean\Acf\Types\Gravity;
-
+<?php namespace Lean\Acf\Types\Gravity;
 /*
 Plugin Name: Advanced Custom Fields: Gravity Forms extension
 Plugin URI: https://github.com/moxie-lean/wp-acf-select-gravityform
@@ -13,7 +11,8 @@ Author URI: http://getmoxied.net/
 
 $url = plugin_dir_url( __FILE__ );
 $path = plugin_dir_path( __FILE__ );
-
-require_once $path . 'vendor/autoload.php';
-
-new Gravity\Select( $url, $path );
+$autoload = $path . 'vendor/autoload.php';
+if ( file_exists( $autoload ) ) {
+	require_once $path . 'vendor/autoload.php';
+}
+new Select( $url, $path );
