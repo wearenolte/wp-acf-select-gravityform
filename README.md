@@ -41,26 +41,3 @@ composer require moxie-lean/acf-gravity-forms-select
 ```
 
 And then run `composer update` and activate the new ACF Type as a regular plugin.  
-
-**Note:** Make sure you have executed `composer install && composer update` cmd on the
-directory `.wp-content/plugins/acf-gravity-forms-select`.  
-
-However, this can be automated by adding the following to your `composer.json`
-located at the root of your project.  
-
-```json
-{
-  "name": "project-name",
-  "require": {
-    "php": ">=5.4",
-    "moxie-lean/acf-gravity-forms-select": "^0.1.0"
-  },
-  "scripts": {
-    "install-gravity-forms-select": "cd ./wp-content/plugins/acf-gravity-forms-select && composer install && composer update",
-    "post-install-cmd": "@install-gravity-forms-select",
-    "post-update-cmd": "@install-gravity-forms-select"
-  }
-}
-```
-
-And this will create the required files on the `ACF Type`.
