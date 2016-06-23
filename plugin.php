@@ -8,6 +8,7 @@ Version: 0.1.0
 Author: Moxie
 Author URI: http://getmoxied.net/
 */
+$path = plugin_dir_path( __FILE__ );
 $autoload = $path . 'vendor/autoload.php';
 
 if ( file_exists( $autoload ) ) {
@@ -16,7 +17,6 @@ if ( file_exists( $autoload ) ) {
 
 if ( class_exists( __NAMESPACE__ . '\\Select' ) ) {
 	$url = plugin_dir_url( __FILE__ );
-	$path = plugin_dir_path( __FILE__ );
 	new Select( $url, $path );
 } else {
 	add_action( 'admin_notices', function(){
