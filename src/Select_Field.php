@@ -34,7 +34,7 @@ class Select_Field {
 			self::option([
 				'value' => $form['id'],
 				'label' => $form['title'],
-				'selected' => $selection === $form['id'],
+				'selected' => absint( $form['id'] ) === $selection,
 			]);
 		}
 	?>
