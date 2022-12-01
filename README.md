@@ -13,7 +13,7 @@ the ID of the form to be used as required. if the value none is selected it will
 
 ## Requirements
 
-- PHP 5.4+  
+- PHP 7.4+  
 - Composer  
 - ACF 5+  
 - Gravity Forms plugin  
@@ -28,7 +28,7 @@ type you need to add a `composer.json` file at the root of your WordPress projec
 {
   "name": "project-name",
   "require": {
-    "php": ">=5.4",
+    "php": ">=7.4",
     "moxie-lean/acf-gravity-forms-select": "^0.1.0"
   }
 }
