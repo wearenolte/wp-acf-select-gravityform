@@ -9,7 +9,7 @@ class Select {
 	*/
 	function __construct( $url, $path ) {
 		$this->settings = [
-			'version'	=> '0.0.1',
+			'version'	=> '0.0.2',
 			'url'		=> $url,
 			'path'		=> $path,
 		];

@@ -4,7 +4,7 @@
 Plugin Name: Advanced Custom Fields: Gravity Forms extension
 Plugin URI: https://github.com/moxie-lean/wp-acf-select-gravityform
 Description: ACF Type that allow to have a custom gravity form type
-Version: 0.1.0
+Version: 0.2.0
 Author: Moxie
 Author URI: http://getmoxied.net/
 */
